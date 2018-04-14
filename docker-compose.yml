@@ -1,0 +1,8 @@
+        server-side-api:
+              image: ibmcom/swift-ubuntu
+              ports:
+                - "8080:8080"     
+              volumes:
+                - .:/root/server-side-api
+              command: bash -c "cd /root/server-side-api &&  swift build  -- clean && swift build &&./.build/debug/server-side-api"
+
